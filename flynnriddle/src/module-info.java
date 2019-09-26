@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author kadus
+ *
+ */
+module flynnriddle {
+}
