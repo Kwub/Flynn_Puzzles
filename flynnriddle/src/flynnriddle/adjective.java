@@ -12,7 +12,7 @@ public class adjective {
 
 			String inputline;
 			while ((inputline = read.readLine()) != null) {
-				if ((inputline.length() == 5) && (inputline.substring(inputline.length() - 1).equals("y")))
+				if ((inputline.length() == 5) && (inputline.substring(inputline.length() - 1).equals("y")) && (inputline.contains("o")))
 					System.out.println(inputline);
 			}
 
