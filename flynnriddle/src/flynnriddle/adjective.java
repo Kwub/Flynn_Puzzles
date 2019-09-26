@@ -16,8 +16,11 @@ public class adjective {
 				if (counter >= 127) {
 					String[] line = inputline.split(" ");
 					String word = line[0];
-					if ((word.length() == 5) && (word.substring(word.length() - 1).equals("y")) && (checkforOW(line)))
+					boolean check = checkforOW(line);
+					
+					if ((word.length() == 5 || (word.length() == 8)) && (word.substring(4,5).equals("Y")) && check) {
 						System.out.println(inputline);
+					}
 				}
 				counter++;
 			}
@@ -29,12 +32,15 @@ public class adjective {
 	}
 
 	public static boolean checkforOW(String[] s) {
+		boolean r = false;
 		for (int i = 1; i < s.length; i++) {
-			if (s[i].equals("OW")) {
-				return true;
+			if (s[i].contains("OW")) {
+				r = true;
 			}
 		}
-		return false;
+		
+		return r;
+		
 	}
 
 }
