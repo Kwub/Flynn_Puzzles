@@ -1,5 +1,9 @@
-package flynnriddle;
+/* Made by Kwabena Aduse-Poku and Yuvraj Nayak
+ * For Mr. Flynn
+ * 9/26/2019
+ */
 
+package flynnriddle;
 import java.net.*;
 import java.io.*;
 
@@ -18,15 +22,9 @@ public class adjective {
 					String word = line[0];
 					boolean check = checkforOW(line);
 					
-					if(word.contains("(") && word.length() == 8 && check && word.charAt(4) == 'Y') {
-						System.out.println(inputline);
-					} else if(word.length() == 5 && word.substring(word.length() - 1).equals("Y") && check) {
+					if (check && (word.length() == 5 || (word.length() == 8 && word.substring(5,6).equals("("))) && (word.substring(4,5).equals("Y"))) {
 						System.out.println(inputline);
 					}
-					
-//					if (check && (word.length() == 5 || word.length() == 8) && (word.substring(4,5).equals("Y")) ) {
-//						System.out.println(inputline);
-//					}
 				}
 				counter++;
 			}
