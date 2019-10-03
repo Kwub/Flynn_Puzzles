@@ -21,9 +21,24 @@ public class adjective {
 				if (counter >= 127) {
 					String[] line = inputline.split(" ");
 					String word = line[0];
-					boolean check = checkforOW(line);
-					
-					if (check && (word.length() == 5 || (word.length() == 8 && word.substring(5,6).equals("("))) && (word.substring(4,5).equals("Y"))) {
+					int eCounter = 0, iCounter = 0, oCounter = 0, uCounter = 0, aCounter = 0;
+					for (int i = 0; i < word.length(); i++) {
+						if (word.charAt(i) == 'E') {
+							eCounter++;
+						} else if (word.charAt(i) == 'I') { 
+							iCounter++;
+							
+						} else if (word.charAt(i) == 'O') { 
+							oCounter++;
+							
+						} else if (word.charAt(i) == 'U') { 
+							uCounter++;
+							
+						} else if (word.charAt(i) == 'A') { 
+							aCounter++;
+						}
+					}
+					if (eCounter == 2 && iCounter == 1 && oCounter == 1 && uCounter == 1 && aCounter == 0) {
 						System.out.println(inputline);
 					}
 				}
